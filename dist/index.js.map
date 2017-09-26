@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":"AAAA;IAEI,OAAO,CAAC,GAAG,CAAC,cAAc,CAAC,CAAC;AAChC,CAAC;AAED,GAAG,EAAE,CAAC","sourcesContent":["function foo(): void\n{\n    console.log(\"I am running\");\n}\n\nfoo();"]}
