@@ -3,7 +3,7 @@ import * as uuid from "uuid";
 import { Article } from "../../models/article";
 import { Asset } from "../../models/asset";
 
-export class DefaultAssetFactory implements ArticleFactory
+export class DevAssetFactory implements ArticleFactory
 {
     public create(mainHeading: string, data: string, isPublic: boolean, subHeading?: string, thumbNail?: Asset, assets?: Asset[]): Promise<Article>
     {

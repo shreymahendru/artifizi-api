@@ -1,11 +1,13 @@
 import { given } from "n-defensive";
+import { BaseModel } from "./base-model";
 
-export class Asset
+export class Asset extends BaseModel
 {
-    private readonly _id: string;
-    private readonly _name: string;
-    private readonly _url: string;
-    private readonly _isPublic: boolean;
+    private  _name: string;
+    private  _url: string;
+    
+    public get name(): string { return this._name; }
+    public get url(): string { return this._url; }
     
     public constructor(id: string, name: string, url: string, isPublic: boolean)
     {
@@ -21,9 +23,24 @@ export class Asset
         given(isPublic, "isPublic")
             .ensureHasValue()
             .ensureIsString();
-        this._id = id;
+        super(id, isPublic);
         this._name = name; 
         this._url = url;
-        this._isPublic = isPublic;
-    } 
+    }
+    
+    public updateName(name: string)
+    {
+        given(name, "name")
+            .ensureHasValue()
+            .ensureIsString();
+        this._name = name; 
+    }
+    
+    public updateUrl(url: string)
+    {
+        given(url, "url")
+            .ensureHasValue()
+            .ensureIsString();
+        this._url = url;
+    }
 }

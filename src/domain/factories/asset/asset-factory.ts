@@ -2,5 +2,5 @@ import { Asset } from "../../models/asset";
 
 export interface AssetFactory
 {
-    create(name: string, url: string, isPublic: boolean): Promise<Asset>;
+    create(name: string, isPublic: boolean, image: string): Promise<Asset>;
 }
